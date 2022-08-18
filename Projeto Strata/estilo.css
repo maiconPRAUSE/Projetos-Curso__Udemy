@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+article {
+    background-color: lawngreen;
+}
+
+article h3 ~ p {
+    color: indigo;
+}
+

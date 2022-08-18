@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: tahoma, arial, sans-serif;
+    font-size: 16px;
+}
+
+#principal {
+    width: 1024px; /*largura do site*/
+    margin: 20px auto;
+}
+
+.header-top {
+    height: 50px;
+    background-color: #162028;
+    position: relative; /* pai do header nav, o  alinhamento do nav é ligado ao header top */
+}
+
+.logotipo {
+    margin: 10px 0px 0px 135px;
+}
+
+.header-nav {
+    position: absolute;/* relacionado ao pai que é o header-top */
+    top: 0; /* afastamento do topo em zero*/
+    right: 0; /*afastamento da direita em zero*/
+    height: 100%; /* 10% sobre os 1024px da largura*/
+}
+
+.header-nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header-nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px 15px 0px 0px;
+    padding: 13px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #425564;
+    /*text-transform: uppercase; tudo maisculo mas do mesmo tamanho*/
+    font-variant: small-caps; /*tudo maiusculo mas primeira letra de cada palavra um pouco maior*/
+    font-size: 18px;
+    letter-spacing: 2px;
+    transition: color .3s linear;
+}
+
+.header-nav a:hover {
+    color: #999995;
+    
+}
+
+.portfolio {
+    padding: 50px 100px;
+    text-align: center;
+}
+
+.portfolio h1 {
+    font-size: 35px;
+    color: #252525;
+}
+
+.portfolio p {
+    font-size: 16px;
+    line-height: 2;
+     
+    color: #555;
+}
+
+.gallery {
+    color: #555;
+    padding: 0px 100px 50px 100px;
+    overflow: auto;
+    
+}
+
+.gallery-card {
+    width: 32%;
+    float: left;
+    text-align: center;
+   
+    
+}
+
+.gallery-title {
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.about {
+    background-color: #003d52;
+    padding: 100px;
+    color: white;
+    box-sizing: border-box;
+    background-image: url(../imagens/bg_detalhe.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    
+
+}
+
+.about h2 {
+    font-variant: small-caps;
+    font-size: 35px;
+    font-weight: normal;
+}
+
+.about p {
+    width: 60%;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#contact {
+    margin: 50px 0px;
+}
+
+#contact address {
+    color: #143f52;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;/*tirando italico da fonte*/
+    font-weight: bolder;
+}
+
+.maps {
+    margin-top: 15px;
+    width: 100%;
+    height: 450px;
+}
+
+.maps iframe {
+    width: 100%;
+}
+
+.rodape {
+    margin-top: 50px;
+    background-color: #0b171f;
+    text-align: center;
+    padding: 10px;
+    color: #6f8597;
+    letter-spacing: 2px;
+    font-size: 12px;
+}

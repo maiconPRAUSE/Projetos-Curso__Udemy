@@ -1,0 +1,284 @@
+@charset "UTF-8";
+
+
+
+html {
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oxygen", arial;
+}
+
+.clearfix::after, .row::after {  /* clear vai limpar os elementos com float que venham antes dele*/
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.maxwidth {
+    max-width: 74em;
+    margin-left: auto;/*para centralizar*/
+    margin-right: auto;
+}
+
+.button {                        /*BUTTON*/
+    text-decoration: none;
+    padding: .9em 3.5em;
+    color: white;
+    background-color: #00a2ff;
+    display: inline-block;
+    border-radius: .2em;
+    
+}
+.button:hover {
+    background-color: #006eff;
+}
+
+.icone-play {
+    height: 5em; /*a div ocupa toda a largura da pagina se não for definido um width. O  text-align no (top-contento) o conteudo dentro da div vai ficar centralizado. No caso a imagem do icone play. Se eu declarar uma largura(width), a div deixa de ocupar toda a largura da tela e passa a respeitar a largura definida.*/
+    /*width: 5em;*/
+    display: none; /*para o icone não aparecer no mobile first(celulares) */
+}
+.icone-play img {
+    max-width: 100%; 
+    max-height: 100%; /* tanto na largura quanto na altura já vai aplicar uma largura maxima ou minima dependendo do tamanho do container. */
+}
+
+.top-header {
+    text-align: center;
+}
+.top-header-logo {
+    margin: .5em;
+}
+
+ /*----------------------------------  NAV  ------------------------------*/
+.top-header-nav {
+    background-color: #612674;
+    text-align: center;
+}
+
+.top-header-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;  
+}
+
+.top-header-nav li {
+    display: inline-block;
+}
+
+.top-header-nav a {
+    color: #713a84;
+}
+
+.top-header-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1em; /*elementos inline não se aplica padding então transforme em block com display*/
+    display: block;
+}
+
+.top-header-nav a:hover {
+    background-color:#7c3792 ;
+    
+}
+/*  -------------------------------  NAV  --------------------------------*/
+
+/* -------------------------------- TITLE --------------------------------*/
+
+.top-content {
+    padding: 1em;
+    text-align: center;
+    background-color: #f6f6f6;
+} 
+.top-content-title {
+    color: #612674;
+    font-size: 1.375em;  /* saber quanto é 22px para EM faça 22 / 16 = 1.375*/
+    margin: 1.375em;
+} 
+.top-content-subtitle {
+    color: #612674;
+    font-size: 1em;
+    line-height: 1.5em;
+}                      
+
+/* -------------------------------- TITLE --------------------------------*/
+
+/* ------------------------------- CONTEUDO 1-------------------------------*/
+
+.middle-content {
+    padding: 2em;
+    background-color: #f6f6f6;
+    text-align: center;
+}
+
+.middle-content-title {
+    font-size: 1.25em;
+    color: #652e79;
+    font-variant:small-caps ;
+}
+
+.middle-content p {
+    line-height: 1.5em;
+    color: #222;
+}
+ /*selecione a tag span que tenha class que se inicia(^) com icon*/
+.middle-content span[class^=icon]{
+    font-size: 4em;
+    color: #652e78;
+}
+/* ------------------------------- CONTEUDO 1-------------------------------*/
+
+/* ------------------------------- CONTEUDO 2-------------------------------*/
+
+.main-content {
+    padding: 2em;
+}
+
+.main-content-article {
+    margin-bottom: 3.5em;
+}
+
+.main-content p {
+    line-height: 1.2em;
+}
+.main-content-title {
+    letter-spacing: .2em;
+    color: #652e79;
+    font-variant: small-caps;
+    font-size: 1.25em;
+    font-weight: normal;
+}
+
+/* ------------------------------- CONTEUDO 2-------------------------------*/
+
+/*--------------------------------- FOOTER ----------------------------------*/
+
+.hidden {  /*esconder o texto dos icones*/
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: block;
+}
+
+.footer {
+    text-align: center;
+    color: #83969f;
+    background-color: #25303e;
+    padding-bottom: 2em;
+}
+
+.footer-menushare {
+    background-color: #303d4c;
+    padding: .5em;
+}
+
+.footer-menushare li {
+    display: inline-block;
+    margin: 0 2em;
+}
+
+.footer-menushare a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+/*---------------------------------FOOTER----------------------------------*/
+
+/*----------------------------- MEDIA QUERIES -----------------------------*/
+
+/* quando tiver uma largura minima de 780px (780 / 16) */
+  /* Chamado de BREAKPOINT */
+@media screen and (min-width: 48.75em) {
+    /*  --------------------------MENU E LINKS -----------------------------*/
+    .icone-play {
+        display: block; /*para o icone agora aparecer na tela mais largas, no caso computadores*/
+    }
+    
+    .top-header-logo {
+        float: left;
+    }
+    .top-header-nav{
+        background-color: transparent;
+        float: right;
+        margin: 20px 15px 0px 0px;
+    }
+    .top-header-nav ul {
+        margin: 0;
+        padding: 0;
+    }
+    .top-header-nav li {
+        display: inline-block;
+    }
+    .top-header-nav a {
+        color: #713a84;
+    }
+    .top-header-nav a:hover {
+        background-color: #e7d9fc;
+    }
+
+    .top-content {
+        background-color: #521a66;
+    }
+    .top-content-title, .top-content-subtitle {
+        color: white;  
+    }  
+    /* --------------------------- MENU E LINKS --------------------------------*/
+    /* --------------------------- ARTIGOS GRID ---------------------------------*/
+
+    .coluna-1_4 {
+        width: 43%;
+        margin: 3%;
+        float: left;
+    }
+
+    .main-content-article .button{
+        float: right;
+    }
+}
+
+@media screen and (min-width: 62.5em){ /* largura minima de 1000px(1000/16 =62.5)*/
+    .top-content {
+        /* Usando shorthands
+        background-color: #521a66;
+        background-image: url(../images/bg_topo_1198x670.jpg);*/
+        background: #521a66  url(../images/bg_topo_1198x670.jpg);
+        height: 15em;
+        padding: 13em;
+        /*box-sizing: border-box; usando para o padding não tranbordar */
+        
+    }
+}
+
+@media screen and (min-width: 74em) {  /*largura de 1184px*/
+    .top-content {
+        background-image: url(../images/bg_topo_1600x1374.jpg);
+        background-position: center top ;
+        /*background-size: cover;*/
+        padding: 19em 15em 15em;
+
+    }
+    
+    .icone-play {
+        display: block;
+        height: 7em;
+    }
+
+    .coluna-1_4 {
+        width: 23%;
+        margin: 1%;
+        float: left;
+    }
+    
+    .coluna-1_2 {
+        margin: 1%;
+        width: 48%;
+        float: left;
+    }
+    .main-content-article .button{
+        float: none;
+    }
+}

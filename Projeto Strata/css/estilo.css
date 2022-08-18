@@ -1,0 +1,430 @@
+body{
+    font-family: 'Open Sans', arial, helvetica, sans-serif;
+    color: #666;
+    line-height: 1.7; /*altura entre os parágrafos*/
+}
+
+a{
+    transition: color .2s linear, border .2s linear;/* fazer com que todas as tag 'a'  tem uma transição de cor linear de 0.2 segundos e border bottom também */
+    text-decoration: none; /*todos sem decoração e cor iguais*/
+    border-bottom: 1px dotted;/*usar bottom ao invez de text-decoration underline*/
+    color: #49bf9d;
+}
+a:hover{
+    border-bottom-color: transparent; /* todos com a cor e decoração iguais*/
+}
+
+p{
+    margin: 0 0 2em;
+}
+
+img {
+    
+    /*width: 100%;  usa a largura total do espaço disponível, e vai fazer tambem a imagem ficar esticada caso seja menor que o tamanho total */
+    max-width: 100%; /*ele vai ajustar a largura máxima da própria imagem, se a imagem for 100px, a largura máxima na tela tambem será de 100px, vai depender muito do tamanho da imagem*/
+    
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #787878;
+    font-weight: normal;
+    margin: 1em 0 1em 0; /* seguindo a ordem top, right, bottom, left. em depende da fonte e podem ser diferente para cada elemento no documento. em é, simplesmente, o tamanho da fonte. Em um elemento com a fonte de 2in, 1em será, portanto, 2in. */
+}
+
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 26px;
+}
+h4{
+    font-size: 22px;
+}
+h5{
+    font-size: 18px;
+}
+h6{
+    font-size: 15px;
+}
+
+sub, sup{
+    font-size: 12px;
+}
+blockquote{
+    border-left: 5px solid #efefef;
+    margin: 2em 0;
+    padding: .5em 0 .5em 1.5em;
+}
+
+blockquote p {
+    margin-bottom: .5em;
+}
+
+code{
+    background: #f7f7f7;
+    border-radius: .35em;
+    border:2px solid #efefef;
+    font-size: .9em;
+    padding: 0.25em 0.65em;
+    font-family: "courier new", monospace;
+    color: #929292;
+}
+
+pre code{
+    display: block;
+}
+
+/* ----          FORMATAÇÃO LISTAS            ---- */
+
+ul, ol {
+ margin: 0;
+ padding: 0;
+ list-style-position: inside;/* mover o li para dentro da lista*/
+ /* ajustar sem usar list style position
+   usando padding-left: em ul,ol
+   criando li
+   li {
+       padding left:  
+ */
+}
+
+li {
+    padding-left: .5em;
+}
+
+.hidden {  /*esconde um elemento apenas visual(desktop), mas que consiga ser um texto ainda acessível*/
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: inline-block;
+}
+
+.ul-alternate {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ul-alternate li {
+    border-bottom: 2px solid #d8d8d8;
+    padding-left: 0;
+}
+
+.ul-alternate li:last-child { /*usando last child para selecionar a ultima li da lista*/
+    border: 0;
+}
+
+.ul-icons {
+    list-style-type: none;
+    padding-left: 0;
+}
+.ul-icons li {
+    display: inline-block;
+    font-size: 2em;
+    color: #49bf9d
+}
+
+/* ----          FORMATAÇÃO LISTAS            ---- */
+
+input, label, textarea {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box; /* vai remover a barra de rolagem causada pelo padding */
+    
+}
+/* atributos se utiliza [], vai aplicar em todas as tags que tiverem a palavra selecionada
+Não deve ter espaço entre o input e o [] */
+input[type="radio"], input[type="checkbox"]{
+    width: auto;
+}
+
+input, textarea, select {
+    background-color: #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    border: 3px solid transparent;
+    margin-bottom: 15px;
+    
+}
+
+textarea {
+    height: 10em;
+}
+
+input:focus, textarea:focus {
+    border: 2px solid #49bf9d;
+    outline: none; /*remove a linha adicional de cor para acessibilidade*/
+}
+
+/* ----          FORMATAÇÃO BOTÕES            ---- */
+
+.button-default {
+    background-color: #49bf9d;
+    border: 3px solid #49bf9d;
+    color: white;
+    padding: .75em 1.5em;
+    border-radius: 5px;
+    font-size: .8em;
+    display: inline-block;
+    width: auto;
+    transition: all .5s; /*(all) para animar qualquer propriedade*/
+    cursor: pointer; /* mudar a seta do mouse sobre o botão*/
+}
+
+.button-default:hover {
+    background-color: #68dfbd;
+    border-color: transparent;
+}
+
+
+.button-default-stroke {
+    background-color: white;
+    border-color: #efefef;
+    color: inherit;/*herdar do pai, no caso vai puxar dos titulos e parágrafos*/
+}
+
+.button-default-stroke:hover {
+    color: #49bf9d;
+    border-color: #49bf9d;
+    background-color: white;
+}
+
+.button-default-small {
+    font-size: .65em;
+}
+.button-default-big {
+    font-size: 1em;
+}
+
+.button-default-full {
+    display: block; /*button por padrão é um elemento de linha, poderia usar width 100% mas o bloco por padrão ocupa 100% da tela  */
+    text-align: center;
+
+}
+
+/* ----          FORMATAÇÃO BOTÕES            ---- */
+
+.imagem-link {
+    border: 0; /*tirar a borda que ficou abaixo das imagens*/
+}
+
+
+/* ----          FORMATAÇÃO TABELAS           ---- */
+
+.table {
+    width: 100%;
+    margin: 0 0 2em 0;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table td {
+    padding: .75em;
+}
+
+.table th {
+    background-color: #ccc;
+    padding: .75em;
+    
+}
+
+.table tbody tr td {
+    border-bottom: 1px solid #ccc;
+}
+
+/* dentro de tbody e dentro da cada tr vai aplicar na primeira td de cada tr*/
+.table tbody tr:first-child td {
+    border-top: 2px solid #666;
+}
+/*aplicar no último td de cada tr*/
+.table tbody tr:last-child td {
+    border-bottom: 2px solid #666;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #eee;
+}
+
+/*aplicar borda em todos os lados na segunda tabela*/
+.table-alternate tbody td, .table-alternate tbody tr:first-child td, .table-alternate tbody tr:last-child td  {
+    border: 1px solid #ddd;
+}
+
+/* ----          FORMATAÇÃO TABELAS           ---- */
+
+
+.main-header{
+    text-align: right;
+    position: fixed; /* vai ficar sempre visival na tela, passando a barra de rolagem ele continua na frente*/
+    top: 0; /* o top  se inicia em 0, maior o número mais baixo ele ficara posicionado */
+    left: 0; /* mesma coisa com o left e right*/
+    height: 100%; /* altura total na tela*/
+    width: 35%;  /* largura de  35% na tela*/
+    padding: 124px 54px 72px; /* mesmo padding de content para ficar o mesmo distanciamento*/
+    box-sizing: border-box; /* com o padding aplicado ele cobre o content, usando o box ele respeita esse espaço, aplicando o padding interno e respeitando o tamanho padrão*/
+    background-image: url(../images/overlay.png), url(../images/bg.jpg);
+    background-position: left top; /* posicionamento  da imagem da parte central e topo*/
+    background-size: auto, cover;  /* auto para a imagem overlay e */
+     
+    /*
+     auto - aumenta a imagem(zoom) sem distorcer, pode não mostrar toda a imagem 
+     contain - de conter a imagem dentro de um espaço definido, vai mostrar toda a imagem e diminuir ou aumentar dentro desse espaço, ela pode repetir, mostra toda a imagem 
+     cover - cobre todo o espaço definido, mantendo sua proporção sem esticar, pode mostrar ou não toda a imagem
+    */ 
+}
+
+.main-header-title{
+    font-size: 22px;
+    line-height: 1.5;
+    color: white;
+    font-weight: normal;
+    color: rgba(255, 255, 255, .5);
+}
+.main-header-title strong{
+    color: white;
+    font-weight: normal;
+}
+.main-header-link{
+    text-decoration: none;
+    color: inherit; /*herdar a cor do elemento pai, que seria o .main-header-title, assim quando for necessário alterar a cor do titulo, ele altera a cor do link tambem sem a necessidade da alterar cada um, já que as cores são iguais  */
+}
+.main-header-link:hover{
+    color: #49bf9d;
+}
+
+.main-content{
+    width: 65%;  /* já que a main header possui 35%, o restante passa para a main content  */
+    margin-left: 35%;  /* main header possui 35% de largura, use 35% de afastamento da margin esquerda, e não a largura para não ficarem uma sobre a outra */
+    padding: 124px 54px 72px; /* top 124px right/left 54px e bottom 72px*/
+    box-sizing: border-box; /*ao usar o padding ele cria a barra de rolagem, o box faz manter o tamanho padrão e somente o tamanho interno de padding e border sejam incorporados. */
+}
+
+.main-header-link img {
+    border-radius: 50%; /* imagem avatar com border circular*/
+    overflow: hidden;
+}
+
+.recent-works-card img {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gallery-img img{
+    width: 100%; /*aplicado somente nessa imagem, já que usando max-width o tamanho da imagem é menor que a largura máxima da tela, criando um pequeno espaço no lado direito. Com o width ele vai esticar a imagem*/    
+}
+
+.gallery-thumb img, .gallery-img img {/*aplicando nas imagens menores e na imagem maior*/
+    margin-bottom: 2%;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.main-footer {
+    position: fixed;
+    bottom: 100px;
+    width: 35%; /*mesma largura do header*/
+    left: 0;
+    padding: 0 54px 72px 0;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+footer ul li {
+   list-style: none;
+   display: inline-block;
+}
+
+footer a {
+    color: #666;
+    
+}
+
+footer i:hover {
+    color: #49bf9d;
+}
+
+.text-left img {
+    float: left;
+    margin: 5px 25px 0px 0;
+}
+
+.text-left {
+    text-align: justify; 
+}
+
+.text-right img {
+    float: right;
+    margin: 5px 0px 0px 25px;
+}
+
+.text-right {
+  text-align: justify; 
+  
+}
+
+/* ----  GRID     FORMATAÇÃO FORMULÁRIO           ---- */
+
+.row {
+    overflow: auto;  /* onde esta as listas (col-2) */
+}
+
+.col-2 {
+    float: left;
+    width: 48.5%;  /*fazer duas listas ficarem uma do lado da outra. Sobre 3% somando os dois lados que serão usados no margin-left e right em .col-2: first e last child */
+} 
+
+
+.col-2:first-child {
+    margin-right: 1.5%; /* afastamento entre label nome e email*/
+}
+
+.col-2:last-child {
+    margin-left: 1.5%; /* afastamento entre campo nome e email*/
+}
+
+.col-2-3 {
+    width: 66%;
+    float: left;
+}
+
+.col-1-3{
+    width: 32%;
+    float: left; /*flutuar a direita da .col-2-3, seria o conteudo ficar a esquerda da box ,do lado direito da div col-2-3 e não o conteudo, pois teria o right mas o correto é left. Ela vai flutuar a esquerda da tela, mas já contem uma div antes, para não sobrepor um na outra ela se ajusta a esquerda mas ao lado da primeira div*/
+}
+
+/* O sinal de + vai selecionar todo elemento imediatamente após o primeiro. No caso ele vai selecionar .col-1-3 que vem imediatamente após col-2-3. */
+.col-2-3 + .col-1-3, .col-1-3 + .col-2-3{
+    margin-left: 2%;
+}
+
+
+/* Usando o n: 
+com 3 colunas o 1 representa o lado esquerdo
+              o 2 representa o meio
+              o 3 representa o lado direito
+              o 4 representa o lado esquerdo e assim sucessivamente  conforme o número de imagens o colunas. 
+              Mas sempre serão calculadas por x1 x2 x3   
+- 1n vai selecionar cada multiplo de 1. No caso será todos.
+- 2n vai selecionar cada multiplo de 2. Somente números pares.
+- Para selecionar a coluna do meio (2,5,8) usa uma formula (3n - 1) para cada multiplo de 3 menos 1 
+usando (3n -1)
+
+imagens selecionadas para aplicar o margin right e left:
+        [1]   2   [3]
+        [4]   5   [6]
+        [7]   8   [9]
+*/
+.col-1-3:nth-child(3n - 2){  /*1, 4, 7*/
+    margin-right: 2%;
+}
+
+.col-1-3:nth-child(3n){  /*3, 6, 9*/
+    margin-left: 2%;
+}
+/* ----          FORMATAÇÃO FORMULÁRIO           ---- */
+
+
+
